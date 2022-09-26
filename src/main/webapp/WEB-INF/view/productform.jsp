@@ -4,11 +4,19 @@
 <!DOCTYPE html>
 
 <html>
+<head>
+    <title>Ввод данных нового продукта</title>
+</head>
+
+<h1>Введите данные нового продукта</h1>
+
 <body>
 <form:form action="processForm" modelAttribute="product">
-    Title: <form:input path="title" />
+    Наименование: <form:input path="title" />
     <br>
-    Cost: <form:input path="cost" />
+    <br>
+    Цена: <form:input path="cost" />
+    <br>
     <br>
     <input type="submit" value="Submit" />
 </form:form>

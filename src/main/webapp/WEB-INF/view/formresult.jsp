@@ -3,9 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Добавление товаров в БД</title>
+    <title>Товар успешно добавлен в БД</title>
 </head>
+
+<h1>Товар id=${product.id} ${product.title} ${product.cost}рублей успешно добавлен!</h1>
+
 <body>
-    Товар ${product.title} ${product.cost} успешно добавлен!
 </body>
 </html>

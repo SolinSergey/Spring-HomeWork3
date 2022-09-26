@@ -9,21 +9,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Общий список продуктов</title>
 </head>
 <body>
 <h1>Список продуктов</h1>
 
-<%--<h1> ${students[0].firstName}</h1>--%>
-<%--<h1> ${students[1].firstName}</h1>--%>
-
-<%--, ${name}.--%>
-
 <ul>
     <c:forEach var="item" items="${products.products}">
-        <li>${item.id} ${item.title} ${item.cost}</li>
+        <li>id=${item.id}   |   ${item.title}   |   ${item.cost} рублей</li>
     </c:forEach>
 </ul>
+
 
 <%--<ul>--%>
 <%--<c:forEach var="item" items="${students}">--%>

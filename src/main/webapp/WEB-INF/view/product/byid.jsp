@@ -8,9 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Вывод данных о товаре по id</title>
 </head>
 <body>
-    ${product.id} ${product.title} ${product.cost}
+<h1> Вывод данных о товаре по id</h1>
+
+<h1>id = ${product.id}  |   ${product.title}    |    ${product.cost} рублей</h1>
 </body>
 </html>

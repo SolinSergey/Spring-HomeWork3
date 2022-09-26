@@ -17,25 +17,25 @@ public class ProductController {
     private ProductService productService;
 
     @Autowired
-    public void setProductService(ProductService productService){
-        this.productService=productService;
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
     }
 
     @RequestMapping("/list")
-    public String list(Model model){
+    public String list(Model model) {
         Product[] products = new Product[productService.getSizeProductsList()];
-        for (int i=0;i<productService.getSizeProductsList();i++){
-            products[i]=productService.getProductById(i);
+        for (int i = 0; i < productService.getSizeProductsList(); i++) {
+            products[i] = productService.getProductById(i);
         }
-        Products listProducts=new Products();
+        Products listProducts = new Products();
         listProducts.setProducts(products);
         model.addAttribute("products", listProducts);
         return "products";
     }
 
     @RequestMapping(path = "/byid", method = RequestMethod.GET)
-    public Product productById (Model model, @RequestParam int id){
-        Product product=productService.getProductById(id);
+    public Product productById(Model model, @RequestParam int id) {
+        Product product = productService.getProductById(id);
         return product;
     }
 
@@ -48,10 +48,11 @@ public class ProductController {
         model.addAttribute("product", product);
         return "productform";
     }
+
     @RequestMapping("/processForm")
     public String processForm(@ModelAttribute("product") Product product) {
         productService.addProductToRepository(product);
+        product.setId(productService.getSizeProductsList());
         return "formresult";
     }
-
 }
